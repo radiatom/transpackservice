@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useRootStore } from '@/store/zustand'
 import { ITEMS, linkType } from './constants'
-import { IcoLogo } from '@/constants/icons'
+import { IcoArrowDown, IcoLogo } from '@/constants/icons'
 import { BurgerBtn } from '@/components/ui/burger-button'
 
 const Header: FC = () => {
@@ -27,7 +27,7 @@ const Header: FC = () => {
               {ITEMS.map((el: linkType, index: number) => {
                 return (
                   <Link key={index} href={el.slug}>
-                    {el.title}
+                    {el.title}{el.children&&<IcoArrowDown/>}
                   </Link>
                 )
               })}

@@ -16,3 +16,4 @@ export { default as IcoMastercard } from "./mastercard.svg";
 export { default as IcoShopBag } from "./Shop bag.svg";
 export { default as IcoUccountt } from "./uccount.svg";
 export { default as IcoVisa } from "./visa.svg";
+export { default as IcoArrowDown } from "./ArrowDown.svg";
