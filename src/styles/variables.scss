@@ -1,10 +1,10 @@
 :root {
   --min-width: 320px;
-  --max-width: 1320px;
+  --max-width: 1330px;
 
-  --header-height: 9.6rem;
+  --header-height: 13.6rem;
 
-  --font-family-primary: var(--openSansCondensedRegular);
+  --font-family-primary: var(--montserrat);
 
   @include laptop {
     --header-height: 18rem;

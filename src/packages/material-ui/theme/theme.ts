@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles'
 
 import { button } from './components/button'
 
-import { openSansCondensedRegular } from '@/constants/fonts/fonts'
+import { montserrat } from '@/constants/fonts/fonts'
 import { menu } from '@/packages/material-ui/theme/components/menu'
 import { menuItem } from '@/packages/material-ui/theme/components/menu-item'
 import { input } from '@/packages/material-ui/theme/components/input'
@@ -34,7 +34,7 @@ const Theme = createTheme({
     },
   },
   typography: {
-    fontFamily: openSansCondensedRegular.style.fontFamily,
+    fontFamily: montserrat.style.fontFamily,
   },
   components: {
     ...button,

@@ -26,9 +26,11 @@ const keyToIcon: Record<string, string> = {
 }
 
 const Footer: FC = () => {
-  const { lang, slug } = useParams()
+  const {  slug } = useParams()
   const t = useTranslations('footer')
   const pathname = usePathname()
+  
+const lang = "uk"
 
   const { data: settings } = useAllSettingsSuspenseQuery()
   const { data: text } = useAllTextsInSiteSuspenseQuery({

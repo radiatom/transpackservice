@@ -11,7 +11,6 @@ import { usePathname } from 'next/navigation'
 
 interface ILayout {
   children: ReactNode
-  lang: string
 }
 
 const Layout: FC<ILayout> = ({ children }) => {
