@@ -1,0 +1,92 @@
+.header {
+  width: 100%;
+  background-color: var(--body-bg-color-dark);
+  height: var(--header-height);
+  transition: background-color 1s;
+
+  &_active {
+    background-color: var(--header-bg-color-blue);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__logo {
+    width: 24rem;
+    height: 4.6rem;
+  }
+
+  &__links_container {
+    display: none;
+
+    @include laptop_m {
+      column-gap: 3.2rem;
+    }
+
+    @include laptop {
+      display: flex;
+      column-gap: 2rem;
+      margin: auto 3rem;
+    }
+  }
+
+  &__link {
+    color: var(--font-color-white);
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2rem;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    transition: var(--transition);
+    hyphens: none;
+    cursor: pointer;
+    font-family: var(--openSansCondensedMedium);
+
+    @include hover {
+      color: var(--svg-hover-color);
+      transition: var(--transition);
+      & svg path {
+        stroke: var(--svg-hover-color);
+      }
+    }
+
+    & svg {
+      flex-shrink: 0;
+      height: 0.8rem;
+      width: 1.6rem;
+    }
+
+    &_active {
+      color: var(--svg-hover-color);
+      transition: var(--transition);
+      & svg path {
+        stroke: var(--svg-hover-color);
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: relative;
+    width: 37rem;
+    margin-left: 2rem;
+
+    @include laptop {
+      display: flex;
+    }
+  }
+
+  &__burger_icon {
+    @include laptop {
+      display: none;
+    }
+  }
+}

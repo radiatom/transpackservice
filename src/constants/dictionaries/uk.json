@@ -1,0 +1,17 @@
+{
+  "header": {
+    "equipment": "Техніка",
+    "news": "Новини"
+  },
+  "footer": {
+    "madeBy": "Розроблено - ",
+    "contacts": "Контакти",
+    "forClients": "Клієнтам",
+    "categories": "Категорії",
+    "searchPlaceholder": "Введіть слово для пошуку",
+    "equipment": "Техніка"
+  },
+  "catalog": {
+    "title": "Каталог техніки"
+  }
+}

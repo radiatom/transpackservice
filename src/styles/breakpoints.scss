@@ -1,0 +1,61 @@
+$breakpoints: (
+  mobile: 768px,
+  tablet: 1024px,
+  laptop: 1440px,
+);
+
+@mixin mobile {
+  @media (min-width: 0px) {
+    @content;
+  }
+}
+
+@mixin mobile_m {
+  @media (min-width: 425px) {
+    @content;
+  }
+}
+
+@mixin bannner_small {
+  @media (min-width: 680px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin laptop_m {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin touch {
+  @media (hover: none) {
+    @content;
+  }
+}

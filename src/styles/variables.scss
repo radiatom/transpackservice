@@ -1,0 +1,14 @@
+:root {
+  --min-width: 320px;
+  --max-width: 1320px;
+
+  --header-height: 9.6rem;
+
+  --font-family-primary: var(--openSansCondensedRegular);
+
+  @include laptop {
+    --header-height: 18rem;
+  }
+
+  --transition: 0.25s ease-in-out;
+}

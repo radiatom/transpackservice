@@ -1,0 +1,98 @@
+.search_sideBar {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+  border: 1px solid var(--header-bg-color-blue);
+  background-color: var(--body-bg-color-primary);
+  transition: width 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 1.2rem 1rem;
+
+  &_close {
+    width: 4.3rem;
+
+    svg {
+      fill: var(--font-color-usafa-blue);
+    }
+  }
+
+  &_open {
+    width: 100%;
+    background-color: var(--header-bg-color-blue);
+  }
+
+  svg {
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: var(--font-color-white);
+
+    &::placeholder {
+      color: var(--font-color-white);
+      font-size: 1.2rem;
+      font-family: var(--eUkraine300);
+      line-height: 24px;
+      color: var(--font-color-placeholder-grey);
+    }
+  }
+}
+
+.search_header {
+  display: flex;
+  gap: 1.4rem;
+  padding: 1rem 0.8rem;
+  border: 1px solid var(--font-color-spanish-grey);
+  align-items: center;
+  justify-content: end;
+  flex-shrink: 0;
+  cursor: pointer;
+  width: 100%;
+  background-color: var(--body-bg-color-dark);
+  height: fit-content;
+  transition:
+    background-color 1s ease-in-out,
+    width 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  &_close {
+    width: 4.1rem;
+  }
+
+  &_open {
+    width: 100%;
+  }
+
+  & svg {
+    width: 1.8rem;
+    height: 1.8rem;
+
+    @include laptop_m {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: var(--font-color-white);
+
+    &::placeholder {
+      color: var(--font-color-white);
+      font-size: 1.4rem;
+    }
+  }
+}

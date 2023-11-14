@@ -1,0 +1,23 @@
+.title {
+  &__text {
+    color: var(--font-color-black);
+    font-family: var(--openSansCondensedMedium);
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @include laptop {
+      font-size: 4.6rem;
+    }
+
+    &__large {
+      margin: 4rem auto;
+      line-height: 7.8rem;
+    }
+
+    &__small {
+      margin: 2.4rem auto;
+      line-height: 5rem;
+    }
+  }
+}

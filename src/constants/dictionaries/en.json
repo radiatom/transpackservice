@@ -1,0 +1,17 @@
+{
+  "header": {
+    "equipment": "Equipments",
+    "news": "News"
+  },
+  "footer": {
+    "madeBy": "Made by - ",
+    "contacts": "Contacts",
+    "forClients": "For clients",
+    "categories": "Categories",
+    "searchPlaceholder": "Enter search word",
+    "equipment": "Equipments"
+  },
+  "catalog": {
+    "title": "Equipment catalog"
+  }
+}
