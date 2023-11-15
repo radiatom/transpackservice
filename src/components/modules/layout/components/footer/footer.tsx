@@ -2,21 +2,23 @@
 
 import React, { FC } from 'react'
 
-import styles from './footer.module.scss'
+import s from './footer.module.scss'
 import {
   IcoDomino,
+  IcoFooterLogo,
   IcoInstagram,
-  IcoMainLogo,
+  IcoMastercard,
   IcoTelegram,
   IcoViber,
+  IcoVisa,
   IcoWhatsapp,
 } from '@/constants/icons'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
 
 import { useAllSettingsSuspenseQuery, useAllTextsInSiteSuspenseQuery } from '@/graphql/generated'
-import { useParams, usePathname } from 'next/navigation'
-import { getAddress, getEmail, getTelephones, getTimeWork } from '@/services/get-info'
+import { usePathname } from 'next/navigation'
+import { getAddress, getEmail, getTelephones } from '@/services/get-info'
+import { POPULAR_FLIGHTS, TO_CUSTOMERS } from './constants'
 
 const keyToIcon: Record<string, string> = {
   telegram: IcoTelegram,
@@ -26,11 +28,9 @@ const keyToIcon: Record<string, string> = {
 }
 
 const Footer: FC = () => {
-  const {  slug } = useParams()
-  const t = useTranslations('footer')
   const pathname = usePathname()
-  
-const lang = "uk"
+
+  const lang = 'uk'
 
   const { data: settings } = useAllSettingsSuspenseQuery()
   const { data: text } = useAllTextsInSiteSuspenseQuery({
@@ -49,31 +49,34 @@ const lang = "uk"
   const telephones = getTelephones(settings, text, lang as string)
   const email = getEmail(settings)
   const address = getAddress(text, lang as string)
-  const timeWork = getTimeWork(text, lang as string)
 
   return (
-    <footer className={styles.footer}>
+    <footer className={s.footer}>
       <div className={'container'}>
-        <div className={styles.footer__inner}>
-          <div className={styles.footer__socials}>
+        <div className={s.footer__inner}>
+          <div className={s.footer__socials}>
             <Link
-              href={`${lang === 'en' ? `/${lang}` : ''}${slug ? `/${slug}` : ''}`}
+              href={'/'}
               style={{
-                pointerEvents: pathname === '/' || pathname === '/en' ? 'none' : 'auto',
+                pointerEvents: pathname === '/' ? 'none' : 'auto',
                 zIndex: '9',
               }}
             >
-              <IcoMainLogo className={styles.footer__main_logo} />
+              <IcoFooterLogo className={s.footer__logo} />
             </Link>
 
-            <div className={styles.footer__links_container}>
+            <h2 className={s.footer__motto}>
+              Сервіс для швидкого пошуку квитків на автобус у будь-якому напрямку
+            </h2>
+
+            <div className={s.footer__links_container}>
               {socialsWithIcons?.map(({ icon: Icon, value, key }) => (
                 <Link
                   href={value ?? ''}
                   className={`${
                     key === 'telegram'
-                      ? styles.footer__links_container__icon_telegram
-                      : styles.footer__links_container__icon
+                      ? s.footer__links_container__icon_telegram
+                      : s.footer__links_container__icon
                   }`}
                   key={`${key}--socials-footer`}
                 >
@@ -81,44 +84,49 @@ const lang = "uk"
                 </Link>
               ))}
             </div>
+
+            <div className={s.footer__bottom_left}>
+              <h4 className={s.footer__bottom_left__text}>@2023. All rights reserved</h4>
+              <IcoVisa className={s.footer__bottom_left__icon_visa} />
+              <IcoMastercard className={s.footer__bottom_left__icon_master} />
+            </div>
           </div>
 
-          <div className={styles.footer__categories}>
-            <div
-              className={`${styles.footer__categories__item} ${styles.footer__categories__full_size}`}
-            >
-              <div className={styles.footer__category}>{t('contacts')}</div>
-              <div className={styles.footer__category__block}>
-                {address && (
-                  <Link
-                    style={{
-                      pointerEvents: 'none',
-                    }}
-                    href={address}
-                    className={`${styles.footer__category__items} ${styles.footer__category__item_large}`}
-                  >
-                    {address}
-                  </Link>
-                )}
-                {timeWork && (
-                  <Link
-                    style={{
-                      pointerEvents: 'none',
-                    }}
-                    href={timeWork}
-                    className={`${styles.footer__category__items} ${styles.footer__category__item_large}`}
-                  >
-                    {timeWork}
-                  </Link>
-                )}
-              </div>
+          <div className={s.footer__categories}>
+            <div className={s.footer__categories__item}>
+              <div className={s.footer__category__title}>клієнтам</div>
+              {TO_CUSTOMERS?.map((item, index) => (
+                <Link
+                  key={`${index}--telephones--footer`}
+                  href={item.slug}
+                  className={s.footer__category__items}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
 
-              <div className={styles.footer__category__block}>
+            <div className={s.footer__categories__item}>
+              <div className={s.footer__category__title}>популярні рейси</div>
+              {POPULAR_FLIGHTS?.map((item, index) => (
+                <Link
+                  key={`${index}--telephones--footer`}
+                  href={item.slug}
+                  className={s.footer__category__items}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+
+            <div className={s.footer__categories__item}>
+              <div className={s.footer__category__title}>Контакти</div>
+              <div className={s.footer__category__contacts}>
                 {email?.map((item, index) => (
                   <Link
                     key={`${index}--email--footer`}
                     href={`mailto:${email}`}
-                    className={`${styles.footer__category__items} ${styles.footer__category__item_large}`}
+                    className={s.footer__category__contacts__items}
                   >
                     {item}
                   </Link>
@@ -128,19 +136,34 @@ const lang = "uk"
                   <Link
                     key={`${index}--telephones--footer`}
                     href={`tel:${item?.telephone}`}
-                    className={`${styles.footer__category__items} ${styles.footer__category__item_large}`}
+                    className={s.footer__category__contacts__items}
                   >
                     {item?.name}
                   </Link>
                 ))}
+
+                <div className={`${s.footer__links_container} ${s.footer__links_margin_bottom}`}>
+                  {socialsWithIcons?.map(({ icon: Icon, value, key }) => (
+                    <Link
+                      href={value ?? ''}
+                      className={`${
+                        key === 'telegram'
+                          ? s.footer__links_container__icon_telegram
+                          : s.footer__links_container__icon
+                      }`}
+                      key={`${key}--socials-footer`}
+                    >
+                      <Icon />
+                    </Link>
+                  ))}
+                </div>
+
+                <Link href={'https://domino-it.agency/'} className={s.footer__made_by}>
+                  Розроблено - <IcoDomino className={s.footer__made_by__icon} />
+                </Link>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className={styles.footer__made_by}>
-          {t('madeBy')}
-          <IcoDomino className={styles.footer__made_by__icon} />
         </div>
       </div>
     </footer>

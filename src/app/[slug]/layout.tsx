@@ -7,10 +7,15 @@ import { ApolloWrapper } from '@/packages/apollo'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 import {
+  eUkraine300,
+  eUkraine400,
+  eUkraine500,
+  futura500,
   futura700,
   namu800,
   montserrat,
   poppins,
+  nunito_sans,
 } from '@/constants/fonts'
 import { Metadata } from 'next'
 import { initialMetadata } from '@/metadata/matadata'
@@ -33,12 +38,12 @@ const RootLayout: FC<IRootLayout> = async ({ children }) => {
 
   return (
     <html
-      lang={"uk"}
-      className={`${futura700.variable} ${namu800.variable} ${montserrat.variable} ${poppins.variable}`}
+      lang={'uk'}
+      className={`${futura700.variable} ${namu800.variable} ${montserrat.variable} ${poppins.variable} ${nunito_sans.variable} ${futura500.variable} ${eUkraine500.variable} ${eUkraine400.variable} ${eUkraine300.variable}`}
     >
       <ThemeRegistry>
         <body>
-          <NextIntlClientProvider locale={"uk"} messages={messages}>
+          <NextIntlClientProvider locale={'uk'} messages={messages}>
             <ApolloWrapper>
               <Layout>{children}</Layout>
             </ApolloWrapper>

@@ -19,15 +19,16 @@ const Header: FC = () => {
     <header className={`${s.header} ${isMobileMenuActive && s.header_active}`}>
       <header className={s.header}>
         <div className={`${s.header__container} container`}>
-            <Link href='/'>
-              <IcoLogo className={s.header__logo}/>
-            </Link>
+          <Link href='/'>
+            <IcoLogo className={s.header__logo} />
+          </Link>
           <div className={s.header__inner}>
             <div className={s.header__links}>
               {ITEMS.map((el: linkType, index: number) => {
                 return (
                   <Link key={index} href={el.slug}>
-                    {el.title}{el.children&&<IcoArrowDown/>}
+                    {el.title}
+                    {el.children && <IcoArrowDown />}
                   </Link>
                 )
               })}

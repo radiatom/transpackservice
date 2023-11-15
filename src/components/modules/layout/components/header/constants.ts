@@ -16,9 +16,3 @@ export const ITEMS: itemsType = [
   },
   { title: 'Новини', slug: '/' },
 ]
-
-// export const TECKETS : ticketsType= [
-//     {title:"Луцьк-Рівне",slug:'/'},
-//     {title:"Луцьк-Київ",slug:'/'},
-//     {title:"Луцьк-Львів",slug:'/'}
-// ]

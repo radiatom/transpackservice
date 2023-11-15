@@ -1,6 +1,6 @@
 import type { Theme } from '@mui/material'
 import { theme } from '@/packages/material-ui/theme'
-import { openSansCondensedRegular } from '@/constants/fonts'
+import { montserrat } from '@/constants/fonts'
 
 export const button: Theme['components'] = {
   MuiButton: {
@@ -17,7 +17,7 @@ export const button: Theme['components'] = {
         fontSize: 20,
         lineHeight: '20px',
         fontWeight: 600,
-        fontFamily: openSansCondensedRegular.style.fontFamily,
+        fontFamily: montserrat.style.fontFamily,
 
         '&:hover': {
           backgroundColor: 'var(--button-primary-hover)',
