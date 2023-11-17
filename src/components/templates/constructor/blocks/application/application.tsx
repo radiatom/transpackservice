@@ -9,7 +9,7 @@ interface IProps {
   id: string
 }
 
-const Application: FC<IProps> = () => {
+const Application: FC<IProps> = ({id}) => {
   return (
     <div className={s.application}>
       <div className='container'>
@@ -40,7 +40,5 @@ const Application: FC<IProps> = () => {
     </div>
   )
 }
-
-Application.propTypes = {}
 
 export default Application

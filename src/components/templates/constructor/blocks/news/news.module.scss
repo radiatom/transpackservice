@@ -1,0 +1,12 @@
+.news {
+  background-color: var(--bg-color-green);
+  &__container {
+    margin-top: 3rem;
+    width: 100%;
+    // display: flex;
+    // align-items: center;
+    padding: 1.2rem 0;
+  }
+
+  
+}
