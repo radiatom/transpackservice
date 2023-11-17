@@ -1,0 +1,55 @@
+.card {
+  width: 100%;
+  height: 100%;
+  &__image {
+    width: 100%;
+    height: 33rem;
+    margin-bottom: 1rem;
+
+    background-color: rgb(174, 178, 178);
+  }
+  &__title {
+    color: var(--font-color-news-dark-green);
+    font-family: var(--futura700);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+  }
+  &__details_container {
+    width: 100%;
+    height: 5.6rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__date {
+    padding: 1.2rem;
+    color: var(--font-color-news-black);
+    font-family: var(--namu800);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 32px;
+    letter-spacing: 0.14px;
+    background: var(--news-bg-color-light-grey);
+    border-left: 8px solid green;
+  }
+  &__button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1.6rem;
+    color: var(--font-color-news-green);
+    font-family: var(--montserrat);
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &__arrow {
+    margin-left: 1.2rem;
+    path {
+      fill: var(--icon-color-green);
+    }
+  }
+}
