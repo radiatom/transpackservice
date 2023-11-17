@@ -4,7 +4,6 @@ import '@/styles/globals.scss'
 import Layout from '@/components/modules/layout/layout'
 import ThemeRegistry from '@/packages/material-ui/theme-registry'
 import { ApolloWrapper } from '@/packages/apollo'
-import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 import {
   eUkraine300,
@@ -43,11 +42,9 @@ const RootLayout: FC<IRootLayout> = async ({ children }) => {
     >
       <ThemeRegistry>
         <body>
-          <NextIntlClientProvider locale={'uk'} messages={messages}>
             <ApolloWrapper>
               <Layout>{children}</Layout>
             </ApolloWrapper>
-          </NextIntlClientProvider>
         </body>
       </ThemeRegistry>
     </html>

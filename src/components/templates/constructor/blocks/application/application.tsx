@@ -2,6 +2,8 @@ import React, { FC } from 'react'
 import s from './application.module.scss'
 import Image from 'next/image'
 import { UkraineImg } from '@/constants/images'
+import { IcoAppStore, IcoGooglePlay } from '@/constants/icons'
+import Link from 'next/link'
 
 interface IProps {
   id: string
@@ -23,6 +25,14 @@ const Application: FC<IProps> = () => {
             </div>
             <div className={s.application__body__item}>
               <p className={s.application__body__text}>Все швидко і просто!</p>
+              <div className={s.application__body__icons_container}>
+                <Link href={'/'}>
+                  <IcoAppStore className={s.application__body__icon}/>
+                </Link>
+                <Link href={'/'}>
+                  <IcoGooglePlay className={s.application__body__icon}/>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

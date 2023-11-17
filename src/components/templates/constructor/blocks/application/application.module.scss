@@ -7,6 +7,7 @@
     align-items: center;
     padding: 1.2rem 0;
   }
+
   &__body {
     max-width: 77rem;
     display: grid;
@@ -15,17 +16,41 @@
     grid-row-gap: 5.8rem;
     font-family: var(--montserrat);
     color: #fff;
+    padding: 0 4rem;
+
     &__item {
       width: 100%;
       text-align: center;
     }
+
     &__title {
       font-size: 24px;
       font-weight: 700;
     }
+
     &__text {
       font-size: 20px;
       font-weight: 500;
+      margin-bottom: 1.8rem;
+      hyphens: none;
+    }
+
+    &__icons_container{
+      display:flex;
+      width: 28rem;
+      justify-content: space-between;
+      margin: auto;
+    }
+
+    &__icon{
+      &:first-child{
+        width: 12rem;
+        height: 4rem;
+      }
+      &:last-child{
+        width: 13.5rem;
+        height: 4rem;
+      }
     }
   }
 }
