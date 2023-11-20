@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const initialMetadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000'),
+  metadataBase: new URL(`${process.env.APP_URL}`),
   title: {
     default: 'XCMG',
     template: '%s | XCMG',

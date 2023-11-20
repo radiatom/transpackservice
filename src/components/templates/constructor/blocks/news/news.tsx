@@ -11,7 +11,7 @@ import 'swiper/css/navigation'
 // import required modules
 import { Navigation } from 'swiper/modules'
 import { NEWS_ITEMS } from './constants'
-import { Card } from '@/components/templates/elements/news-card'
+import { Card } from '@/components/templates/constructor/elements/news-card'
 
 interface IProps {
   id: string

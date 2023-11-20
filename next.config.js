@@ -29,6 +29,7 @@ const nextConfig = {
   },
 
   env: {
+    APP_URL: `${clientUrl}`,
     SERVER_URL: `${serverUrl}`,
   },
 }
