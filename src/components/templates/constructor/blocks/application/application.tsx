@@ -9,7 +9,7 @@ interface IProps {
   id: string
 }
 
-const Application: FC<IProps> = () => {
+const Application: FC<IProps> = ({ id }) => {
   return (
     <div className={s.application}>
       <div className='container'>
@@ -26,11 +26,19 @@ const Application: FC<IProps> = () => {
             <div className={s.application__body__item}>
               <p className={s.application__body__text}>Все швидко і просто!</p>
               <div className={s.application__body__icons_container}>
-                <Link href={'https://apps.apple.com/ru/app/%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%B0%D0%BA%D1%81%D0%B5%D1%80%D0%B2%D1%96%D1%81/id1481333998'}>
-                  <IcoAppStore className={s.application__body__icon}/>
+                <Link
+                  href={
+                    'https://apps.apple.com/ru/app/%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%B0%D0%BA%D1%81%D0%B5%D1%80%D0%B2%D1%96%D1%81/id1481333998'
+                  }
+                >
+                  <IcoAppStore className={s.application__body__icon} />
                 </Link>
-                <Link href={'https://play.google.com/store/apps/details?id=com.devseonet.transpackservice'}>
-                  <IcoGooglePlay className={s.application__body__icon}/>
+                <Link
+                  href={
+                    'https://play.google.com/store/apps/details?id=com.devseonet.transpackservice'
+                  }
+                >
+                  <IcoGooglePlay className={s.application__body__icon} />
                 </Link>
               </div>
             </div>
@@ -40,7 +48,5 @@ const Application: FC<IProps> = () => {
     </div>
   )
 }
-
-Application.propTypes = {}
 
 export default Application

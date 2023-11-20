@@ -2,12 +2,11 @@ import React, { Fragment } from 'react'
 import { useParams } from 'next/navigation'
 import { useAllPagesSuspenseQuery } from '@/graphql/generated'
 import { Application } from '@/components/templates/constructor/blocks/application'
+import { News } from '@/components/templates/constructor/blocks/news'
 
 const pagesVariables = {
-  proNasStatistika: 'pro-nas-statistika',
-  mainSlider: 'main-slider',
-  catalog: 'katalog-texniki',
   application: 'application',
+  news: 'news',
 }
 
 const Constructor = () => {
@@ -17,7 +16,10 @@ const Constructor = () => {
   })
 
   // const blocks = data?.allPages?.data?.find((el) => el?.slug === (slug ? slug : 'main'))?.blocks
-  const blocks = [{ id: '1', slug: 'application' }]
+  const blocks = [
+    { id: '1', slug: 'application' },
+    { id: '2', slug: 'news' },
+  ]
   return (
     <>
       {blocks?.map((el) => {
@@ -28,12 +30,13 @@ const Constructor = () => {
             </Fragment>
           )
         }
-        // if (el.slug === pagesVariables.proNasStatistika) {
-        //   return (
-        //     <Fragment key={`${el.slug}-${el.id}-about-info`}>
-        //     </Fragment>
-        //   )
-        // }
+        if (el.slug === pagesVariables.news) {
+          return (
+            <Fragment key={`${el.slug}-${el.id}-news`}>
+              <News id={el.id} />
+            </Fragment>
+          )
+        }
       })}
     </>
   )
