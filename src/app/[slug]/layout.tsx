@@ -42,9 +42,9 @@ const RootLayout: FC<IRootLayout> = async ({ children }) => {
     >
       <ThemeRegistry>
         <body>
-            <ApolloWrapper>
-              <Layout>{children}</Layout>
-            </ApolloWrapper>
+          <ApolloWrapper>
+            <Layout>{children}</Layout>
+          </ApolloWrapper>
         </body>
       </ThemeRegistry>
     </html>
