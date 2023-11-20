@@ -8,8 +8,6 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-import './styles.css'
-
 // import required modules
 import { Navigation } from 'swiper/modules'
 import { NEWS_ITEMS } from './constants'
@@ -35,7 +33,7 @@ const News: FC<IProps> = ({ id }) => {
               spaceBetween={30}
               navigation={true}
               modules={[Navigation]}
-              className='mySwiper'
+              className={s.news__swiper}
             >
               {NEWS_ITEMS.map((el, index) => {
                 return (
